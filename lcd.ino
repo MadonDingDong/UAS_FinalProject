@@ -12,7 +12,7 @@ char keys [COLS][ROWS] = {
   {'*','0','#','D'}
 };
 byte colPins[COLS]={19, 18, 5, 17}; // pin yang terhubung dengan keypad
-byte rowPins [ROWS]={12,14,27,35}; // pin yang terhubung dengan keypad
+byte rowPins [ROWS]={16, 4, 0, 2}; // pin yang terhubung dengan keypad
 keypad keypad = Keypad( makeKeymap(keys), colPins, rowPins, ROWS, PINS );
 
 //mendefinisikan lcd
