@@ -48,11 +48,25 @@ void calculateVoltageImbalance(float va, float vb, float vc) {
 void calculateCurrent(float ia, float ib, float ic) {
     float averageCurrent = (ia + ib + ic) / 3;
 
+    // Menghitung selisih dari rata-rata
     float maxIa = ia - averageCurrent;
     float maxIb = ib - averageCurrent;
     float maxIc = ic - averageCurrent;
 
-    // Further processing can be done with maxIa, maxIb, maxIc if needed
+   // Menghitung ketidakseimbangan sebagai persentase dari rata-rata
+    float maxDiffCu = max(diffIa, max(diffIb, diffIc)); // Selisih maksimum
+    float UIpercentage = (maxDiffCu / averageCurrent) * 100;
+
+     if (averageCurrent != 0) {
+        lcd.clear();
+        lcd.print("Ketidakseimbangan:");
+        lcd.setCursor(0, 1);
+        lcd.print(UIpercentage, 3);
+        lcd.print("%");
+    } else {
+        lcd.clear(); 
+        lcd.print("Rata-rata nol!");
+    }
 }
 
 void setup() {
