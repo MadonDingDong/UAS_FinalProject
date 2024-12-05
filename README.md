@@ -1,4 +1,4 @@
-# KALKULATOR TEGANGAN DAN ARUS
+# KALKULATOR PERSENTASE TEGANGAN DAN ARUS
 
 ![Status Build](https://img.shields.io/badge/build-In_Progress-brightgreen) ![Lisensi](https://img.shields.io/badge/license-MIT-blue)
 
