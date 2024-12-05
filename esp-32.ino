@@ -27,7 +27,7 @@ void calculateVoltageImbalance(float va, float vb, float vc) {
     // Menghitung selisih dari rata-rata
     float diffVa = fabs(va - averageVoltage);
     float diffVb = fabs(vb - averageVoltage);
-    float diffVc = fabs(vc - averageVoltage);
+    float diffVc = fabs(vc - averageVoltage);j
 
     // Menghitung ketidakseimbangan sebagai persentase dari rata-rata
     float maxDiff = max(diffVa, max(diffVb, diffVc)); // Selisih maksimum
@@ -54,7 +54,7 @@ void calculateCurrent(float ia, float ib, float ic) {
     float maxIc = ic - averageCurrent;
 
    // Menghitung ketidakseimbangan sebagai persentase dari rata-rata
-    float maxDiffCu = max(diffIa, max(diffIb, diffIc)); // Selisih maksimum
+    float maxDiffCu = max(maxIa, max(maxIb, maxIc)); // Selisih maksimum
     float UIpercentage = (maxDiffCu / averageCurrent) * 100;
 
      if (averageCurrent != 0) {
@@ -65,7 +65,7 @@ void calculateCurrent(float ia, float ib, float ic) {
         lcd.print("%");
     } else {
         lcd.clear(); 
-        lcd.print("Rata-rata nol!");
+        lcd.print("Rata-rata tidak boleh nol!");
     }
 }
 
